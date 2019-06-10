@@ -1,48 +1,54 @@
 package com.Dudek9.currency;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.TextView;
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.ImageView;
 
-import java.util.List;
+public class Logo extends AppCompatActivity {
 
-public class Logo extends BaseAdapter {
-    List<String> list;
-    Context context;
-    LayoutInflater layoutInflater;
-
-    public Logo(List<String> list, Context context) {
-        this.list = list;
-        this.context = context;
-
-        layoutInflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
-
+    @SuppressLint("ResourceAsColor")
     @Override
-    public int getCount() {
-        return list.size();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_logo);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        ImageView logo=findViewById(R.id.Logo);
+
+
+        Animation alpha=new AlphaAnimation(0,1);
+        alpha.setDuration(3000);
+        logo.setAnimation(alpha);
+
+        alpha.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Intent intent =new Intent(Logo.this, Main.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+
+
+
     }
 
-    @Override
-    public Object getItem(int position) {
-        return null;
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View view=layoutInflater.inflate(android.R.layout.simple_list_item_1,parent,false);
-        TextView textView=(TextView)view.findViewById(android.R.id.text1);
-
-        textView.setText(list.get(position));
-
-        return  view;
-    }
 }

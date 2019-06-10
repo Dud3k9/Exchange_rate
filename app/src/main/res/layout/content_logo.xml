@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".Logo"
     tools:showIn="@layout/activity_logo">
 
     <ImageView
@@ -14,7 +14,14 @@
         android:layout_height="397dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="161dp"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="173dp"
+        app:srcCompat="@drawable/logo" />
+
 </RelativeLayout>

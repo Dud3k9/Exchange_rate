@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Currency</string>
-    <string name="title_activity_main"></string>
+    <string name="title_activity_main">Exchange</string>
     <string name="title_activity_main2">Zamiana walut</string>
     <string name="z">z</string>
     <string name="na">na</string>
-    <string name="title_activity_exchange">Exchange</string>
+    <string name="title_activity_exchange">Zamieniona</string>
 </resources>
